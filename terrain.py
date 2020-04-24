@@ -34,7 +34,7 @@ class Terrain:
         self.map_x = list(np.array(self.map_x) - self.center_x)
         self.map_y = list(np.array(self.map_y) - self.center_y)
 
-    def make_terrain(self, area_list, name):
+    def interp_terrain(self, area_list, name):
         # make interpolate function
         self.load_data(area_list)
         self.data_arange()
@@ -55,7 +55,7 @@ class Terrain:
         np.save(path, np.array(terrain))
         return terrain
             
-    def call_terrain(self, name):
+    def get_terrain(self, name):
         np_load_old = np.load
         np.load = lambda *a, **k: np_load_old(*a, allow_pickle=True, **k)
 #        if not area_list and name:

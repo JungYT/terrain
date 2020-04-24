@@ -4,7 +4,7 @@ import numpy as np
 
 terrain = Terrain()
 interpolation_name = "kangwon-yangyang"
-dem_called = terrain.call_terrain(interpolation_name)
+dem_called = terrain.get_terrain(interpolation_name)
 
 xlim = 1000 
 ylim = 1000 
